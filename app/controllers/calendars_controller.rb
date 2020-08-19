@@ -34,11 +34,7 @@ class CalendarsController < ApplicationController
       plan = @plans.map do |plan|
         plans.push(plan.plan) if plan.date == @todays_date + x
       end
-<<<<<<< Updated upstream
-      days = { :month => (@todays_date + x).month, :date => (@todays_date+x).day, :plans => plans}
-=======
-      days = {month: (@todays_date + x).month, date: (@todays_date+x).day, plan: plans}
->>>>>>> Stashed changes
+      days = {month: (@todays_date + x).month, date: (@todays_date+x).day, wday: wdays[(@todays_date + x).wday], plan: plans}
       @week_days.push(days)
     end
 
